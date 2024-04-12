@@ -32,6 +32,11 @@ body {
 	backface-visibility: hidden;
 }
 
+input {
+	font-family: var(--font-family);
+	font-weight: var(--medium);
+}
+
 h1 {
 	font-size: 25px;
 	line-height: 40px;
@@ -65,6 +70,8 @@ h3 {
 	font-weight: var(--font-weight-medium);
 	margin: 0;
 	padding: 0;
+	width: 100%;
+	display: inline;
 }
 
 .body-text-small {
@@ -73,4 +80,6 @@ h3 {
 	font-weight: var(--font-weight-medium);
 	margin: 0;
 	padding: 0;
+	width: 100%;
+	display: inline;
 }

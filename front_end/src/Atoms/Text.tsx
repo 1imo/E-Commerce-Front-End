@@ -14,12 +14,12 @@ type TextColour =
 interface Props {
 	size: TextSize;
 	text: string;
-	color?: TextColour;
+	colour?: TextColour;
 }
 
 // Returns a p tag
 // Default colour of --grey-two
-const Text: FC<Props> = ({ size, text, color = "--grey-two" }) => {
+const Text: FC<Props> = ({ size, text, colour = "--grey-two" }) => {
 	let classname;
 	if (size === "one") {
 		classname = "body-text-large";
@@ -28,7 +28,7 @@ const Text: FC<Props> = ({ size, text, color = "--grey-two" }) => {
 	}
 
 	return (
-		<p className={classname} style={{ color: `var(${color})` }}>
+		<p className={classname} style={{ color: `var(${colour})` }}>
 			{text}
 		</p>
 	);

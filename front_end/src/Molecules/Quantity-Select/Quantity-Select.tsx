@@ -40,6 +40,7 @@ const QuantitySelect: FC<Props> = ({
 				wrapper ? "quantity-select--wrapper" : ""
 			}`}
 			style={wrapper ? { backgroundColor: `var(${colour})` } : undefined}
+			aria-label="region"
 		>
 			<button
 				className="quantity-select__button"
@@ -51,7 +52,7 @@ const QuantitySelect: FC<Props> = ({
 				<Icon type="Remove" colour="--grey-one" />
 			</button>
 			<div className="quantity-select__quantity">
-				<Text size="two" text={String(quanitity)} color="--grey-one" />
+				<Text size="two" text={String(quanitity)} colour="--grey-one" />
 			</div>
 			<button
 				className="quantity-select__button"

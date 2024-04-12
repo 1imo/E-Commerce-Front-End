@@ -6,9 +6,9 @@ import BtnIcon from "./Molecules/Btn-Icon/Btn-Icon";
 import CrdCollections from "./Molecules/Crd-Collections/Crd-Collections";
 import CrdProducts from "./Molecules/Crd-Products-Sml/Crd-Products";
 import QuantitySelect from "./Molecules/Quantity-Select/Quantity-Select";
+import Input from "./Molecules/Input/Input";
 
 function App() {
-	const [quanitity, setQuantity] = useState(0);
 	return (
 		<section
 			style={{
@@ -19,11 +19,11 @@ function App() {
 				width: "100vw",
 			}}
 		>
-			<QuantitySelect
-				wrapper={false}
-				colour="--grey-three"
-				quanitity={quanitity}
-				setQuanitity={setQuantity}
+			<Input
+				type="User"
+				placeholder="email@email.com"
+				label="Email"
+				required={true}
 			/>
 		</section>
 	);
