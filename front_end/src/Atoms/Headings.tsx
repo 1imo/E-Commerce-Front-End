@@ -12,22 +12,17 @@ type HeadingColour =
 	| "--red";
 
 // Props
-interface HeadingProps {
+interface Props {
 	type: HeadingType;
 	size: HeadingSize;
 	text: string;
-	color?: HeadingColour;
+	colour?: HeadingColour;
 }
 
 // Returns a heading element
 // A secondary heading is smaller than a primary heading by step of one
 // Defaults to --grey-one
-const Heading: FC<HeadingProps> = ({
-	type,
-	size,
-	text,
-	color = "--grey-one",
-}) => {
+const Heading: FC<Props> = ({ type, size, text, colour = "--grey-one" }) => {
 	let HeadingElement;
 	if (type === "Primary") {
 		if (size === "one") {
@@ -40,8 +35,6 @@ const Heading: FC<HeadingProps> = ({
 	} else {
 		if (size === "one") {
 			HeadingElement = "h2";
-		} else if (size === "two") {
-			HeadingElement = "h3";
 		} else {
 			HeadingElement = "h3";
 		}
@@ -49,7 +42,7 @@ const Heading: FC<HeadingProps> = ({
 
 	return createElement(
 		HeadingElement,
-		{ style: { color: `var(${color})` } },
+		{ style: { color: `var(${colour})` } },
 		text
 	);
 };

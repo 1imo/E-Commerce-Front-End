@@ -1,4 +1,4 @@
-import { FC, createElement } from "react";
+import { FC } from "react";
 
 // Types
 type TextSize = "one" | "two";
@@ -11,7 +11,7 @@ type TextColour =
 	| "--red";
 
 // Props
-interface TextProps {
+interface Props {
 	size: TextSize;
 	text: string;
 	color?: TextColour;
@@ -19,7 +19,7 @@ interface TextProps {
 
 // Returns a p tag
 // Default colour of --grey-two
-const Text: FC<TextProps> = ({ size, text, color = "--grey-two" }) => {
+const Text: FC<Props> = ({ size, text, color = "--grey-two" }) => {
 	let classname;
 	if (size === "one") {
 		classname = "body-text-large";

@@ -1,0 +1,12 @@
+.link-notif {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	height: 32px;
+	width: 32px;
+	box-sizing: border-box;
+	border-radius: 32px;
+	z-index: 2;
+	margin: 16px;
+}

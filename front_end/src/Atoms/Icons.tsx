@@ -19,17 +19,18 @@ type Colour =
 	| "--grey-two"
 	| "--grey-three"
 	| "--grey-four"
+	| "--white"
 	| "--red";
 
 // Props
-interface IconProps {
+interface Props {
 	type: IconType;
 	colour?: Colour;
 }
 
 // Returns icons based on the type prop with a stroke based on the colour prop
 // Defaults to --grey-one
-const Icon: FC<IconProps> = ({ type, colour = "--grey-one" }) => {
+const Icon: FC<Props> = ({ type, colour = "--grey-one" }) => {
 	let icon;
 
 	switch (type) {

@@ -1,0 +1,72 @@
+.crd-collections {
+	position: relative;
+	height: 256px !important;
+	width: 256px !important;
+	overflow: hidden;
+	border-radius: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	transform-origin: center center;
+}
+
+.crd-collections__image {
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: bottom;
+	filter: brightness(0.75);
+	transition: transform 0.3s ease;
+	transform-origin: center center;
+	transition: outline 0.3s ease, transform 0.3s ease;
+}
+
+.crd-collections__content {
+	align-self: flex-start;
+	padding: 16px;
+}
+
+.crd-collections__subtitle {
+	opacity: 0.75;
+}
+
+.crd-collections,
+.crd-collections__image,
+.crd-collections__content {
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+}
+
+.crd-collections:hover .link-notif {
+	outline: 2px solid var(--dropshadow-large);
+}
+
+.crd-collections:hover {
+	outline: 2px solid var(--dropshadow-large);
+}
+
+.crd-collections:hover .crd-collections__image {
+	transform: scale(1.25);
+}
+
+.crd-collections[tabindex]:focus {
+	box-shadow: var(--dropshadow-large);
+}
+
+.crd-collections[tabindex]:focus .crd-collections__image {
+	transform: scale(1.25);
+}
+
+.crd-collections[tabindex]:focus:active .crd-collections__image,
+.crd-collections:active .crd-collections__image {
+	transform: scale(1);
+	filter: brightness(0.875);
+}
+
+.crd-collections:not(:hover):not(:focus):not(:active) .crd-collections__image {
+	transform: scale(1) !important;
+	filter: brightness(0.75);
+}
