@@ -33,13 +33,6 @@
 	opacity: 0.75;
 }
 
-.crd-collections,
-.crd-collections__image,
-.crd-collections__content {
-	transform-style: preserve-3d;
-	backface-visibility: hidden;
-}
-
 .crd-collections:hover .link-notif {
 	outline: 2px solid var(--dropshadow-large);
 }
