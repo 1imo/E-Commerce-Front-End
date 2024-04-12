@@ -41,8 +41,8 @@
 
 .crd-products__link-icon {
 	position: absolute;
-	top: -4px;
-	right: -4px;
+	top: -8px;
+	right: -8px;
 	opacity: 0;
 	transform: translate(8px, -8px);
 	transition: opacity 0.3s ease, transform 0.3s ease;

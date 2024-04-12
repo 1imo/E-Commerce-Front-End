@@ -1,10 +1,14 @@
+import { useState } from "react";
 import Heading from "./Atoms/Headings";
 import Icon from "./Atoms/Icons";
 import Text from "./Atoms/Text";
+import BtnIcon from "./Molecules/Btn-Icon/Btn-Icon";
 import CrdCollections from "./Molecules/Crd-Collections/Crd-Collections";
 import CrdProducts from "./Molecules/Crd-Products-Sml/Crd-Products";
+import QuantitySelect from "./Molecules/Quantity-Select/Quantity-Select";
 
 function App() {
+	const [quanitity, setQuantity] = useState(0);
 	return (
 		<section
 			style={{
@@ -15,11 +19,11 @@ function App() {
 				width: "100vw",
 			}}
 		>
-			<CrdProducts
-				width="fixed"
-				imageSource="https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-				title="Product"
-				category="Category"
+			<QuantitySelect
+				wrapper={false}
+				colour="--grey-three"
+				quanitity={quanitity}
+				setQuanitity={setQuantity}
 			/>
 		</section>
 	);
