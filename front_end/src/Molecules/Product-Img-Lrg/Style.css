@@ -2,6 +2,7 @@
 	height: 384px;
 	width: calc(100vw - 64px);
 	object-fit: cover;
-	object-position: center center;
+	object-position: center bottom;
 	border-radius: 32px;
+	flex: 0 0 calc(100vw - 64px);
 }

@@ -6,6 +6,7 @@
 	border-radius: 16px;
 	box-sizing: border-box;
 	padding: 0;
+	width: min-content;
 }
 
 .quantity-select--wrapper {

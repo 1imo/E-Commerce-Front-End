@@ -14,27 +14,46 @@ import NavBar from "./Organisms/Nav-Bar/Index";
 import ProductPgActions from "./Organisms/Product-Pg-Actions/Index";
 import ProductGrid from "./Organisms/Product-Grid/Index";
 import CollectionsGrid from "./Organisms/Collections-Grid/Index";
+import ProductImgGrid from "./Organisms/Product-Img-Grid/Index";
+import LabelSelectGrid from "./Organisms/Label-Select-Grid/Index";
+import BasketCrd from "./Molecules/Crd-Basket/Index";
+import BasketCrdGrid from "./Organisms/Basket-Crd-Grid/Index";
 
 const json = [
 	{
-		title: "Summer Essentials",
-		subTitle: "Beach-Ready Fashion",
+		title: "Example Product",
+		category: "Items",
+		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		quantity: 5,
+		option: "Small",
 	},
 	{
-		title: "Tech Gadgets",
-		subTitle: "Latest Innovations",
+		title: "Example Product",
+		category: "Items",
+		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		quantity: 5,
+		option: "Small",
 	},
 	{
-		title: "Home Decor",
-		subTitle: "Cozy and Chic",
+		title: "Example Product",
+		category: "Items",
+		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		quantity: 5,
+		option: "Small",
 	},
 	{
-		title: "Outdoor Gear",
-		subTitle: "Adventure Awaits",
+		title: "Example Product",
+		category: "Items",
+		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		quantity: 5,
+		option: "Small",
 	},
 	{
-		title: "Kids' Toys",
-		subTitle: "Fun and Educational",
+		title: "Example Product",
+		category: "Items",
+		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		quantity: 5,
+		option: "Small",
 	},
 ];
 
@@ -54,7 +73,7 @@ function App() {
 				width: "100vw",
 			}}
 		>
-			<CollectionsGrid collections={json} />
+			<BasketCrdGrid products={json} />
 		</section>
 	);
 }

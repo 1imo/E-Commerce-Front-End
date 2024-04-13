@@ -28,7 +28,7 @@ const ProductPgActions: FC<Props> = ({ price, count }) => {
 			<div className="product-pg__actions__top">
 				<QuantitySelect
 					wrapper={false}
-					quanitity={quanitity}
+					quantity={quanitity}
 					setQuanitity={setQuantity}
 				/>
 				<Text

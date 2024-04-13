@@ -1,0 +1,28 @@
+.basket-crd {
+	display: flex;
+	flex-direction: row;
+	column-gap: 16px;
+	width: 100%;
+	padding: 16px;
+	overflow: hidden;
+	height: min-content;
+}
+
+.basket-crd-grid__img {
+	flex: 1;
+	width: 100%;
+	aspect-ratio: 4/5 !important;
+	object-fit: cover;
+	object-position: center bottom;
+	border-radius: 16px;
+}
+
+.basket-crd-grid__info {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+}
+
+.basket-crd-grid__info-text {
+}
