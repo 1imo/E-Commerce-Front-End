@@ -9,8 +9,16 @@ import QuantitySelect from "./Molecules/Quantity-Select/Quantity-Select";
 import Input from "./Molecules/Input/Input";
 import LabelSelect from "./Molecules/Label-Select/Label-Select";
 import BtnMain from "./Molecules/Btn-Main/Btn-Main";
+import ProductImgLrg from "./Molecules/Product-Img-Lrg/Product-Img-Lrg";
+import NavBar from "./Organisms/Nav-Bar/Nav-Bar";
+import ProductPgActions from "./Organisms/Product-Pg-Actions/Product-Pg-Actions";
 
 function App() {
+	const [count, setCount] = useState<number>(0);
+
+	useEffect(() => {
+		console.log(count);
+	}, [count]);
 	return (
 		<section
 			style={{
@@ -21,7 +29,7 @@ function App() {
 				width: "100vw",
 			}}
 		>
-			<LabelSelect text="Select a category" selected={false} />
+			<ProductPgActions price={10} count={setCount} />
 		</section>
 	);
 }

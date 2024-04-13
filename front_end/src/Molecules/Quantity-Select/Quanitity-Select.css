@@ -30,7 +30,6 @@
 }
 
 .quantity-select__button:disabled > svg > path {
-	cursor: not-allowed;
 	stroke: var(--grey-two);
 }
 

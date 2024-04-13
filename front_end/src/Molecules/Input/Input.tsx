@@ -40,12 +40,20 @@ const Input: FC<Props> = ({ type, placeholder, label, required }) => {
 
 	return (
 		<section className="input">
-			<div>
-				{label ? (
-					<Text size="two" text={String(label)} colour="--grey-one" />
-				) : null}
-				{required ? <Text size="two" colour="--red" text="*" /> : null}
-			</div>
+			{label ? (
+				<div>
+					{label ? (
+						<Text
+							size="two"
+							text={String(label)}
+							colour="--grey-one"
+						/>
+					) : null}
+					{required ? (
+						<Text size="two" colour="--red" text="*" />
+					) : null}
+				</div>
+			) : null}
 
 			<div
 				className={`input__container ${

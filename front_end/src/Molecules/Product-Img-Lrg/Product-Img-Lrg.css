@@ -1,0 +1,7 @@
+.product-img__lrg {
+	height: 384px;
+	width: calc(100vw - 64px);
+	object-fit: cover;
+	object-position: center center;
+	border-radius: 32px;
+}

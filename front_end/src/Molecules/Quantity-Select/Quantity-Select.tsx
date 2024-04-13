@@ -15,7 +15,7 @@ type WrapperColour =
 
 interface Props {
 	wrapper: Wrapper;
-	colour: WrapperColour;
+	colour?: WrapperColour;
 	quanitity: number;
 	setQuanitity: (value: number) => void;
 }
@@ -46,7 +46,7 @@ const QuantitySelect: FC<Props> = ({
 				className="quantity-select__button"
 				onClick={decrement}
 				tabIndex={0}
-				disabled={quanitity === 0}
+				disabled={quanitity === 1}
 				aria-label="Decrement quantity"
 			>
 				<Icon type="Remove" colour="--grey-one" />

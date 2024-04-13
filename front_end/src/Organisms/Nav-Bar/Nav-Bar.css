@@ -1,0 +1,17 @@
+.nav-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100vw;
+	padding: 16px;
+}
+
+.nav-bar__left {
+	width: calc(100% - 96px) !important;
+	align-self: flex-start;
+}
+
+.nav-bar__right {
+	width: min-content;
+	align-self: flex-end;
+}
