@@ -13,18 +13,23 @@
 	background-color: var(--grey-two);
 }
 
-.btn-icon:hover:active,
-.btn-icon:focus:active {
-	background-color: var(--grey-three);
-}
-
 .btn-icon:hover > svg > path,
 .btn-icon:focus > svg > path {
 	stroke: var(--grey-three);
 }
 
-.btn-icon:hover:active > svg > path,
-.btn-icon:focus:active > svg > path {
-	stroke: var(--grey-two);
-	transition: stroke 0.2s ease;
+.btn-icon:active {
+	background-color: var(--grey-one);
+}
+
+.btn-icon:active > svg > path {
+	stroke: var(--grey-three);
+}
+
+.btn-icon:not(:hover) {
+	background-color: var(--grey-three);
+}
+
+.btn-icon:not(:hover) > svg > path {
+	stroke: var(--grey-one);
 }

@@ -35,12 +35,12 @@
 }
 
 .input__container input:focus {
-	outline: none;
 	color: var(--grey-one);
+	outline: none;
 }
 
-/* .input__container:not(.input__container--search) > svg > path {
-	stroke: var(--grey-two);
+/* .input__container:focus-within {
+	outline: 2px solid blue !important;
 } */
 
 .input__container:not(.input__container--search):focus-within > svg > path {
