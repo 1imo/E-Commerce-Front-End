@@ -9,10 +9,14 @@
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
 	scroll-padding-inline: 16px;
+	-webkit-scrollbar-width: none;
+	scrollbar-width: none;
 }
 
-.collections-grid::-webkit-scrollbar {
+.collections-grid:-webkit-scrollbar {
 	display: none;
+	width: 0;
+	height: 0;
 }
 
 .collections-grid > * {

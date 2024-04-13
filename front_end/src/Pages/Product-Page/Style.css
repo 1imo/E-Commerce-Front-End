@@ -1,0 +1,11 @@
+.product-page {
+	position: relative;
+}
+
+.product-page__main-content {
+	padding-left: 16px;
+}
+
+.product-page__description {
+	padding: 0px 16px;
+}

@@ -6,21 +6,22 @@ import "./Style.css";
 
 interface Props {
 	price: number;
-	count: (count: number) => void;
+	callback: (callback: number) => void;
 }
 
 // I am still not entirely sure how to go about adding to the basket
 // Whether I should do it in a service layer here
 // Or if I should do it in the parent component
-const ProductPgActions: FC<Props> = ({ price, count }) => {
+const ProductPgActions: FC<Props> = ({ price, callback }) => {
 	// Quanity of the product selected
 	const [quanitity, setQuantity] = useState<number>(1);
 	// User has clicked the button
 	const [okay, setOkay] = useState<boolean>(false);
 
-	// Push the quantity to the parent component
+	// Push the quantity to the parent component on button click
 	useEffect(() => {
-		count(quanitity);
+		console.log("2", quanitity);
+		callback(quanitity);
 	}, [okay]);
 
 	return (

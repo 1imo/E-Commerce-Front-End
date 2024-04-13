@@ -4,25 +4,21 @@ import "./Style.css";
 
 interface Props {
 	options: Array<string>;
+	selected: string;
+	callback: (selected: string) => void;
 }
 
-const LabelSelectGrid: FC<Props> = ({ options }) => {
-	const [selected, setSelected] = useState<string>(options[0]);
+const LabelSelectGrid: FC<Props> = ({ options, selected, callback }) => {
 	return (
 		<div className="label-select-grid">
-			{options.map(
-				(option, index) => (
-					console.log(option, selected, option == selected),
-					(
-						<LabelSelect
-							key={index}
-							selected={option == selected}
-							text={option}
-							select={setSelected}
-						/>
-					)
-				)
-			)}
+			{options.map((option, index) => (
+				<LabelSelect
+					key={index}
+					selected={option == selected}
+					text={option}
+					callback={callback}
+				/>
+			))}
 		</div>
 	);
 };

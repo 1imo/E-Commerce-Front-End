@@ -18,7 +18,8 @@ import ProductImgGrid from "./Organisms/Product-Img-Grid/Index";
 import LabelSelectGrid from "./Organisms/Label-Select-Grid/Index";
 import BasketCrd from "./Molecules/Crd-Basket/Index";
 import BasketCrdGrid from "./Organisms/Basket-Crd-Grid/Index";
-import Home from "./Pages/Home/Index";
+import Home from "./Pages/Home-Page/Index";
+import ProductPage from "./Pages/Product-Page/Index";
 
 function App() {
 	return (
@@ -30,7 +31,7 @@ function App() {
 				width: "100vw",
 			}}
 		>
-			<Home />
+			<ProductPage />
 		</section>
 	);
 }

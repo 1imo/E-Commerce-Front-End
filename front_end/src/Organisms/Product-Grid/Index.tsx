@@ -9,7 +9,6 @@ interface Props {
 }
 
 const ProductGrid: FC<Props> = ({ products }) => {
-	console.log(products);
 	return (
 		<div className="product-grid" role="region" aria-label="products">
 			{products.map((product, index) => (

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Text from "../../Atoms/Text";
 import "./Style.css";
+import Heading from "../../Atoms/Headings";
 
 interface Props {
 	text: string;

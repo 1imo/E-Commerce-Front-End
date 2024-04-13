@@ -2,20 +2,16 @@ import { FC } from "react";
 import ProductImgLrg from "../../Molecules/Product-Img-Lrg/Index";
 import "./Style.css";
 
-interface Image {
-	src: string;
+interface Props {
+	images: Array<string>;
 	alt: string;
 }
 
-interface Props {
-	images: Array<Image>;
-}
-
-const ProductImgGrid: FC<Props> = ({ images }) => {
+const ProductImgGrid: FC<Props> = ({ images, alt }) => {
 	return (
 		<div className="product-img__grid">
 			{images.map((image, index) => (
-				<ProductImgLrg key={index} src={image.src} alt={image.alt} />
+				<ProductImgLrg key={index} src={image} alt={alt} />
 			))}
 		</div>
 	);
