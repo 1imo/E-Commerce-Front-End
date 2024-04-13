@@ -4,9 +4,12 @@ import ProductImgGrid from "../../Organisms/Product-Img-Grid/Index";
 import Heading from "../../Atoms/Headings";
 import Text from "../../Atoms/Text";
 import LabelSelectGrid from "../../Organisms/Label-Select-Grid/Index";
-import { addToBasket, product } from "./Service";
+import { product } from "./Service";
 import ProductPgActions from "../../Organisms/Product-Pg-Actions/Index";
 import "./Style.css";
+import RecommendedProductGrid from "../../Organisms/Recommended-Product-Grid/Index";
+import { productJSON } from "../Home-Page/Service";
+import { Basket } from "../Basket-Page/Service";
 
 const ProductPage: FC = () => {
 	const options: string[] = product.options.map((option) =>
@@ -19,18 +22,21 @@ const ProductPage: FC = () => {
 	const [btnCallback, setBtnCallback] = useState<number>(0); // Selected quantity but only returns on button click
 
 	useEffect(() => {
-		console.log("CLICK", btnCallback);
-		addToBasket({
-			id: product.id,
-			heading: product.heading,
-			option: categoryCallback,
-			quantity: btnCallback,
-			price: Number(
-				product.options[
-					options.findIndex((option) => option === categoryCallback)
-				][1]
-			),
-		});
+		if (btnCallback > 0) {
+			Basket.addItem({
+				id: product.id,
+				heading: product.heading,
+				option: categoryCallback,
+				quantity: btnCallback,
+				price: Number(
+					product.options[
+						options.findIndex(
+							(option) => option === categoryCallback
+						)
+					][1]
+				),
+			});
+		}
 	}, [btnCallback]);
 
 	return (
@@ -73,6 +79,7 @@ const ProductPage: FC = () => {
 				)}
 				callback={setBtnCallback}
 			/>
+			<RecommendedProductGrid products={productJSON} />
 		</main>
 	);
 };

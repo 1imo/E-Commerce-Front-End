@@ -14,35 +14,3 @@ export const product = {
 	description:
 		"Introduce a touch of natural elegance to your home with our Everyday Stone Vase. Crafted from high-quality ceramic materials, this vase showcases a unique stone-like texture that adds depth and character to any space. Its versatile design makes it perfect for displaying your favorite flowers or as a standalone decorative piece. Available in two distinct variations, each vase is meticulously handcrafted, ensuring that no two pieces are exactly alike. Elevate your interior décor with the timeless beauty of the Everyday Stone Vase.",
 };
-
-export const selected = {
-	id: product.id,
-	heading: product.heading,
-	category: product.category,
-	options: product.options[0] || undefined,
-	quanitity: 0,
-};
-
-export interface Product {
-	id: number;
-	heading: string;
-	option: string;
-	price: number;
-	quantity: number;
-}
-
-export const addToBasket = (product: Product) => {
-	const basket = JSON.parse(localStorage.getItem("basket") || "[]");
-	const index = basket.findIndex(
-		(item: Product) =>
-			item.id === product.id && item.option === product.option
-	);
-
-	if (index === -1) {
-		basket.push(product);
-	} else {
-		basket[index].quantity += product.quantity;
-	}
-
-	localStorage.setItem("basket", JSON.stringify(basket));
-};

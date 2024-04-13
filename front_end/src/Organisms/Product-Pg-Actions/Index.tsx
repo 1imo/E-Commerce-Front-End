@@ -20,8 +20,9 @@ const ProductPgActions: FC<Props> = ({ price, callback }) => {
 
 	// Push the quantity to the parent component on button click
 	useEffect(() => {
-		console.log("2", quanitity);
-		callback(quanitity);
+		if (okay) {
+			callback(quanitity);
+		}
 	}, [okay]);
 
 	return (
