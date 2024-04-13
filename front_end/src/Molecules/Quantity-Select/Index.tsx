@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Icon from "../../Atoms/Icons";
-import "./Quanitity-Select.css";
+import "./Index.css";
 import Text from "../../Atoms/Text";
 
 type Wrapper = true | false;

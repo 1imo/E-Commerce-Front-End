@@ -1,8 +1,8 @@
 import { FC } from "react";
 import Heading from "../../Atoms/Headings";
-import "./Crd-Products.css";
+import "./Index.css";
 import Icon from "../../Atoms/Icons";
-import LinkNotif from "../Link-Notif/Link-Notif";
+import LinkNotif from "../Link-Notif/Index";
 
 type Width = "fixed" | "fluid";
 

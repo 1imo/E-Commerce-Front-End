@@ -1,7 +1,7 @@
 import { FC } from "react";
-import "./Crd-Collections.css";
+import "./Index.css";
 import Heading from "../../Atoms/Headings";
-import LinkNotif from "../Link-Notif/Link-Notif";
+import LinkNotif from "../Link-Notif/Index";
 // This is a card for displaying collections
 // Not for displaying a collection of cards
 // See organisms for that

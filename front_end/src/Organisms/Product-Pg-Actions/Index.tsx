@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
-import BtnMain from "../../Molecules/Btn-Main/Btn-Main";
-import QuantitySelect from "../../Molecules/Quantity-Select/Quantity-Select";
+import BtnMain from "../../Molecules/Btn-Main/Index";
+import QuantitySelect from "../../Molecules/Quantity-Select/Index";
 import Text from "../../Atoms/Text";
-import "./Product-Pg-Actions.css";
+import "./Index.css";
 
 interface Props {
 	price: number;

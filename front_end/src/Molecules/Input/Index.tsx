@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import Icon from "../../Atoms/Icons";
-import "./Input.css";
+import "./Index.css";
 import Text from "../../Atoms/Text";
 
 // Types

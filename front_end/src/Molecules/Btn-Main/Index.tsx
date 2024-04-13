@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Text from "../../Atoms/Text";
-import "./Btn-Main.css";
+import "./Index.css";
 
 interface Props {
 	text: string;

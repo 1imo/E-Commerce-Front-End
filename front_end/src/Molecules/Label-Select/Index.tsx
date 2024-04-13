@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./Label-Select.css";
+import "./Index.css";
 import Text from "../../Atoms/Text";
 
 type Selected = true | false;
