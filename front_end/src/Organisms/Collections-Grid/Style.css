@@ -1,0 +1,20 @@
+.collections-grid {
+	display: flex;
+	padding: 16px !important;
+	column-gap: 16px;
+	justify-content: flex-start;
+	overflow-x: scroll;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	scroll-padding-inline: 16px;
+}
+
+.collections-grid::-webkit-scrollbar {
+	display: none;
+}
+
+.collections-grid > * {
+	scroll-snap-align: start;
+}

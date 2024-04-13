@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Heading from "../../Atoms/Headings";
-import "./Index.css";
+import "./Style.css";
 import Icon from "../../Atoms/Icons";
 import LinkNotif from "../Link-Notif/Index";
 

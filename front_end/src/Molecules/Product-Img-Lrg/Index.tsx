@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./Index.css";
+import "./Style.css";
 
 interface Props {
 	src: string;

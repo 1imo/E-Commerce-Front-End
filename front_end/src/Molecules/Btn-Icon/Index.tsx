@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Icon from "../../Atoms/Icons";
-import "./Btn-Icon.css";
+import "./Style.css";
 
 // Types
 type Icon = "Basket" | "Back";

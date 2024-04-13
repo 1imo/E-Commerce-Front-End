@@ -1,4 +1,5 @@
 .crd-collections {
+	flex: 0 0 256px;
 	position: relative;
 	height: 256px !important;
 	width: 256px !important;
@@ -19,9 +20,8 @@
 	object-fit: cover;
 	object-position: bottom;
 	filter: brightness(0.75);
-	transition: transform 0.3s ease;
+	transition: transform 0.3s ease, filter 0.3s ease;
 	transform-origin: center center;
-	transition: outline 0.3s ease, transform 0.3s ease;
 }
 
 .crd-collections__content {
@@ -33,16 +33,20 @@
 	opacity: 0.75;
 }
 
-.crd-collections:hover .link-notif {
+.crd-collections:hover .link-notif,
+.crd-collections:active .link-notif {
 	outline: 2px solid var(--dropshadow-large);
 }
 
-.crd-collections:hover {
+.crd-collections:hover,
+.crd-collections:active {
 	outline: 2px solid var(--dropshadow-large);
 }
 
-.crd-collections:hover .crd-collections__image {
+.crd-collections:hover .crd-collections__image,
+.crd-collections:active .crd-collections__image {
 	transform: scale(1.25);
+	filter: brightness(0.875);
 }
 
 .crd-collections[tabindex]:focus {
@@ -51,15 +55,17 @@
 
 .crd-collections[tabindex]:focus .crd-collections__image {
 	transform: scale(1.25);
-}
-
-.crd-collections[tabindex]:focus:active .crd-collections__image,
-.crd-collections:active .crd-collections__image {
-	transform: scale(1);
 	filter: brightness(0.875);
 }
 
-.crd-collections:not(:hover):not(:focus):not(:active) .crd-collections__image {
+.crd-collections:not(:active) .crd-collections__image {
 	transform: scale(1) !important;
 	filter: brightness(0.75);
+}
+
+@media (pointer: coarse) {
+	.crd-collections:active .crd-collections__image {
+		transform: scale(1.25);
+		filter: brightness(0.875);
+	}
 }

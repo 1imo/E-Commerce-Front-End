@@ -1,6 +1,6 @@
 import { FC } from "react";
 import CrdProductsSml from "../../Molecules/Crd-Products-Sml/Index";
-import "./Index.css";
+import "./Style.css";
 
 interface Product {
 	id: string;

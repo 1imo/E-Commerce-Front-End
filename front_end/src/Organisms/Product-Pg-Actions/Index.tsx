@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import BtnMain from "../../Molecules/Btn-Main/Index";
 import QuantitySelect from "../../Molecules/Quantity-Select/Index";
 import Text from "../../Atoms/Text";
-import "./Index.css";
+import "./Style.css";
 
 interface Props {
 	price: number;

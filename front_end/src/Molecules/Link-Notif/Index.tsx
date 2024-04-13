@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Icon from "../../Atoms/Icons";
-import "./Index.css";
+import "./Style.css";
 
 const LinkNotif: FC = () => {
 	return (

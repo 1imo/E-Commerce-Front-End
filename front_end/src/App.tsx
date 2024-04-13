@@ -13,22 +13,28 @@ import ProductImgLrg from "./Molecules/Product-Img-Lrg/Index";
 import NavBar from "./Organisms/Nav-Bar/Index";
 import ProductPgActions from "./Organisms/Product-Pg-Actions/Index";
 import ProductGrid from "./Organisms/Product-Grid/Index";
+import CollectionsGrid from "./Organisms/Collections-Grid/Index";
 
 const json = [
 	{
-		id: "1",
-		title: "Wireless Bluetooth Headphones",
-		category: "Electronics",
+		title: "Summer Essentials",
+		subTitle: "Beach-Ready Fashion",
 	},
 	{
-		id: "2",
-		title: "Stainless Steel Water Bottle",
-		category: "Outdoor",
+		title: "Tech Gadgets",
+		subTitle: "Latest Innovations",
 	},
 	{
-		id: "3",
-		title: "Organic Cotton T-Shirt",
-		category: "Apparel",
+		title: "Home Decor",
+		subTitle: "Cozy and Chic",
+	},
+	{
+		title: "Outdoor Gear",
+		subTitle: "Adventure Awaits",
+	},
+	{
+		title: "Kids' Toys",
+		subTitle: "Fun and Educational",
 	},
 ];
 
@@ -42,13 +48,13 @@ function App() {
 		<section
 			style={{
 				display: "flex",
-				alignItems: "center",
+				// alignItems: "center",
 				justifyContent: "center",
 				height: "100vh",
 				width: "100vw",
 			}}
 		>
-			<ProductGrid products={json} />
+			<CollectionsGrid collections={json} />
 		</section>
 	);
 }

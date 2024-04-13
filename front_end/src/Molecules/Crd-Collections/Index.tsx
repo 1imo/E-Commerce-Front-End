@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./Index.css";
+import "./Style.css";
 import Heading from "../../Atoms/Headings";
 import LinkNotif from "../Link-Notif/Index";
 // This is a card for displaying collections

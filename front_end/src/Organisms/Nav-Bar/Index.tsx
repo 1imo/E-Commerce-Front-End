@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Input from "../../Molecules/Input/Index";
 import BtnIcon from "../../Molecules/Btn-Icon/Index";
-import "./Index.css";
+import "./Style.css";
 
 // Types
 type Left = "Search" | "Back";

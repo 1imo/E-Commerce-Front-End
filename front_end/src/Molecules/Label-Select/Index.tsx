@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./Index.css";
+import "./Style.css";
 import Text from "../../Atoms/Text";
 
 type Selected = true | false;

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Text from "../../Atoms/Text";
-import "./Index.css";
+import "./Style.css";
 
 interface Props {
 	text: string;
