@@ -18,62 +18,19 @@ import ProductImgGrid from "./Organisms/Product-Img-Grid/Index";
 import LabelSelectGrid from "./Organisms/Label-Select-Grid/Index";
 import BasketCrd from "./Molecules/Crd-Basket/Index";
 import BasketCrdGrid from "./Organisms/Basket-Crd-Grid/Index";
-
-const json = [
-	{
-		title: "Example Product",
-		category: "Items",
-		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		quantity: 5,
-		option: "Small",
-	},
-	{
-		title: "Example Product",
-		category: "Items",
-		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		quantity: 5,
-		option: "Small",
-	},
-	{
-		title: "Example Product",
-		category: "Items",
-		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		quantity: 5,
-		option: "Small",
-	},
-	{
-		title: "Example Product",
-		category: "Items",
-		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		quantity: 5,
-		option: "Small",
-	},
-	{
-		title: "Example Product",
-		category: "Items",
-		src: "https://images.unsplash.com/photo-1572853566597-b83cde546912?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		quantity: 5,
-		option: "Small",
-	},
-];
+import Home from "./Pages/Home/Index";
 
 function App() {
-	const [count, setCount] = useState<number>(0);
-
-	useEffect(() => {
-		console.log(count);
-	}, [count]);
 	return (
 		<section
 			style={{
 				display: "flex",
-				// alignItems: "center",
-				justifyContent: "center",
+				flexDirection: "column",
 				height: "100vh",
 				width: "100vw",
 			}}
 		>
-			<BasketCrdGrid products={json} />
+			<Home />
 		</section>
 	);
 }

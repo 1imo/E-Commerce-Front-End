@@ -6,7 +6,7 @@ import LinkNotif from "../Link-Notif/Index";
 // Not for displaying a collection of cards
 // See organisms for that
 
-interface Props {
+export interface Props {
 	title: string;
 	subTitle: string;
 	imagePath: string;

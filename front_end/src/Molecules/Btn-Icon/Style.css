@@ -6,6 +6,7 @@
 	border: none;
 	aspect-ratio: 1/1;
 	transition: background-color 0.3s ease, transform 0.2s ease;
+	touch-action: manipulation;
 }
 
 .btn-icon:hover,
@@ -18,7 +19,8 @@
 	stroke: var(--grey-three);
 }
 
-.btn-icon:active {
+.btn-icon:active,
+.btn-icon:active > svg > path {
 	background-color: var(--grey-one);
 }
 
@@ -32,4 +34,24 @@
 
 .btn-icon:not(:hover) > svg > path {
 	stroke: var(--grey-one);
+}
+
+@media (hover: none) {
+	.btn-icon {
+		background-color: var(--grey-two);
+		touch-action: manipulation;
+		transition: background-color 0.2s ease, transform 0.1s ease;
+	}
+
+	.btn-icon > svg > path {
+		stroke: var(--grey-three);
+	}
+
+	.btn-icon:active {
+		background-color: var(--grey-one);
+	}
+
+	.btn-icon:active > svg > path {
+		stroke: var(--grey-three);
+	}
 }

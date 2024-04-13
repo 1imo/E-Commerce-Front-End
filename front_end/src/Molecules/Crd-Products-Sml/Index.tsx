@@ -1,13 +1,12 @@
 import { FC } from "react";
 import Heading from "../../Atoms/Headings";
 import "./Style.css";
-import Icon from "../../Atoms/Icons";
 import LinkNotif from "../Link-Notif/Index";
 
 type Width = "fixed" | "fluid";
 
-interface Props {
-	width: Width;
+export interface Props {
+	width?: Width;
 	imageSource: string;
 	title: string;
 	category: string;
@@ -15,7 +14,12 @@ interface Props {
 
 // Small product card
 // Fixed or auto widths based on the parent container
-const CrdProductsSml: FC<Props> = ({ width, imageSource, title, category }) => {
+const CrdProductsSml: FC<Props> = ({
+	width = "fluid",
+	imageSource,
+	title,
+	category,
+}) => {
 	return (
 		<div
 			className={`crd-products crd-products--${width}`}
