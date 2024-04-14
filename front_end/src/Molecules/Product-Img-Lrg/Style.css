@@ -6,7 +6,7 @@
 	flex: 0 0 calc(100vw - 64px);
 }
 
-@media (min-width: 500px) {
+@media (min-width: 450px) {
 	.product-img__lrg {
 		width: 100%;
 		flex: 0 0 100%;

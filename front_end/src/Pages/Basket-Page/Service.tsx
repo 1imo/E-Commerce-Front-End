@@ -35,13 +35,13 @@ export class Basket {
 		);
 
 		if (index !== -1) {
-			Basket.basket.splice(index, 1);
+			if (Basket.basket[index].quantity > 1) {
+				Basket.basket[index].quantity -= 1;
+			} else {
+				Basket.basket.splice(index, 1);
+			}
 			localStorage.setItem("basket", JSON.stringify(Basket.basket));
 		}
-	}
-
-	static getItems() {
-		return Basket.basket;
 	}
 
 	static getTotal() {
@@ -51,7 +51,7 @@ export class Basket {
 		);
 	}
 
-	static getBasket() {
+	static getItems() {
 		return Basket.basket;
 	}
 }

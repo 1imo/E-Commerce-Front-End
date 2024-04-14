@@ -24,5 +24,16 @@
 	row-gap: 16px;
 }
 
-.basket-crd-grid__info-text {
+@media (min-width: 550px) {
+	.basket-crd {
+		padding: 16px 0px;
+	}
+}
+
+@media (min-width: 650px) {
+	.label-select-grid {
+		flex-wrap: wrap;
+
+		row-gap: 8px;
+	}
 }

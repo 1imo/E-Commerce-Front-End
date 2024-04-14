@@ -20,9 +20,10 @@ import BasketCrd from "./Molecules/Crd-Basket/Index";
 import BasketCrdGrid from "./Organisms/Basket-Crd-Grid/Index";
 import Home from "./Pages/Home-Page/Index";
 import ProductPage from "./Pages/Product-Page/Index";
+import BasketPage from "./Pages/Basket-Page/Index";
 
 function App() {
-	return <ProductPage />;
+	return <BasketPage />;
 }
 
 export default App;

@@ -1,5 +1,6 @@
 import { FC } from "react";
-import BasketCrd, { Props as Product } from "../../Molecules/Crd-Basket/Index";
+import BasketCrd from "../../Molecules/Crd-Basket/Index";
+import { Product } from "../../Pages/Basket-Page/Service";
 import "./Style.css";
 
 interface Props {
@@ -10,14 +11,7 @@ const BasketCrdGrid: FC<Props> = ({ products }) => {
 	return (
 		<div className="basket-crd__grid">
 			{products.map((product, index) => (
-				<BasketCrd
-					key={index}
-					src={product.src}
-					title={product.title}
-					category={product.category}
-					quantity={product.quantity}
-					option={product?.option}
-				/>
+				<BasketCrd key={index} product={product} />
 			))}
 		</div>
 	);

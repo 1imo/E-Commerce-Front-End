@@ -33,6 +33,7 @@
 @media (min-width: 650px) {
 	.label-select-grid {
 		flex-wrap: wrap;
+
 		row-gap: 8px;
 	}
 }
