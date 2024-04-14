@@ -5,6 +5,7 @@
 	position: relative;
 	overflow: hidden !important;
 	height: 256px;
+	box-sizing: border-box;
 }
 
 .crd-products--fixed {

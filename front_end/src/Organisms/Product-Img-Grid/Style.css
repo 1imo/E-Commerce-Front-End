@@ -3,12 +3,14 @@
 	padding: 0px 16px 16px !important;
 	column-gap: 16px;
 	justify-content: flex-start;
-	overflow-x: scroll;
+	overflow-x: auto;
 	white-space: nowrap;
 	-webkit-overflow-scrolling: touch;
-	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
 	scroll-padding-inline: 16px;
+	cursor: grab;
+	box-sizing: border-box;
+	aspect-ratio: 7/8;
 	-webkit-scrollbar-width: none;
 	scrollbar-width: none;
 }
@@ -19,6 +21,24 @@
 	height: 0;
 }
 
+.product-img__grid:active {
+	cursor: grabbing;
+}
+
 .product-img__grid > * {
 	scroll-snap-align: start;
+}
+
+@media (min-width: 500px) {
+	.product-img__grid {
+		padding: 0px 32px 16px 16px !important;
+		flex-direction: column;
+		row-gap: 32px;
+		width: 60%;
+		scroll-snap-type: y mandatory;
+		scroll-padding-block: 16px;
+		-webkit-scroll-snap-type: y mandatory;
+		height: max-content;
+		overflow-x: visible;
+	}
 }

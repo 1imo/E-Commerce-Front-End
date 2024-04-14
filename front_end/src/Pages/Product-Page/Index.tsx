@@ -10,6 +10,7 @@ import "./Style.css";
 import RecommendedProductGrid from "../../Organisms/Recommended-Product-Grid/Index";
 import { productJSON } from "../Home-Page/Service";
 import { Basket } from "../Basket-Page/Service";
+import ProductGrid from "../../Organisms/Product-Grid/Index";
 
 const ProductPage: FC = () => {
 	const options: string[] = product.options.map((option) =>
@@ -44,42 +45,46 @@ const ProductPage: FC = () => {
 			<NavBar left="Back" />
 			<ProductImgGrid images={product.images} alt={product.heading} />
 			<div className="product-page__main-content">
-				<Heading
-					type="Primary"
-					size="two"
-					text={product.heading}
-					colour="--grey-one"
+				<div className="product-page__main-content--text">
+					<Heading
+						type="Primary"
+						size="two"
+						text={product.heading}
+						colour="--grey-one"
+					/>
+					<Heading
+						type="Secondary"
+						size="two"
+						text={product.category}
+						colour="--grey-two"
+					/>
+				</div>
+				<LabelSelectGrid
+					selected={categoryCallback}
+					options={options}
+					callback={setCategoryCallback}
 				/>
-				<Heading
-					type="Secondary"
-					size="two"
-					text={product.category}
-					colour="--grey-two"
+				<div className="product-page__description">
+					<Text
+						size="two"
+						text={product.description}
+						colour="--grey-one"
+					/>
+				</div>
+				<ProductPgActions
+					price={Number(
+						product.options[
+							options.findIndex(
+								(option) => option === categoryCallback
+							)
+						][1]
+					)}
+					callback={setBtnCallback}
 				/>
-			</div>
-			<LabelSelectGrid
-				selected={categoryCallback}
-				options={options}
-				callback={setCategoryCallback}
-			/>
-			<div className="product-page__description">
-				<Text
-					size="two"
-					text={product.description}
-					colour="--grey-one"
-				/>
-			</div>
-			<ProductPgActions
-				price={Number(
-					product.options[
-						options.findIndex(
-							(option) => option === categoryCallback
-						)
-					][1]
+				{document.body.clientWidth < 500 && (
+					<RecommendedProductGrid products={productJSON} />
 				)}
-				callback={setBtnCallback}
-			/>
-			<RecommendedProductGrid products={productJSON} />
+			</div>
 		</main>
 	);
 };

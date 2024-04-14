@@ -22,18 +22,7 @@ import Home from "./Pages/Home-Page/Index";
 import ProductPage from "./Pages/Product-Page/Index";
 
 function App() {
-	return (
-		<section
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				height: "100vh",
-				width: "100vw",
-			}}
-		>
-			<ProductPage />
-		</section>
-	);
+	return <ProductPage />;
 }
 
 export default App;

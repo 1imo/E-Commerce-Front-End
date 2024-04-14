@@ -22,3 +22,9 @@
 .label-select-grid > * {
 	scroll-snap-align: start;
 }
+
+@media (min-width: 500px) {
+	.label-select-grid {
+		padding: 16px 0px 32px;
+	}
+}

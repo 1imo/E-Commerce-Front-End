@@ -1,8 +1,15 @@
 .product-img__lrg {
-	height: 384px;
 	width: calc(100vw - 64px);
 	object-fit: cover;
 	object-position: center bottom;
 	border-radius: 32px;
 	flex: 0 0 calc(100vw - 64px);
+}
+
+@media (min-width: 500px) {
+	.product-img__lrg {
+		width: 100%;
+		flex: 0 0 100%;
+		aspect-ratio: 1/1 !important;
+	}
 }

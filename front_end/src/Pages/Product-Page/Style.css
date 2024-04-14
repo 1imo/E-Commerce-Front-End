@@ -1,11 +1,33 @@
 .product-page {
 	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
 .product-page__main-content {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.product-page__main-content--text {
 	padding-left: 16px;
 }
 
 .product-page__description {
 	padding: 0px 16px 32px;
+}
+
+@media (min-width: 500px) {
+	.product-page__main-content--text {
+		padding-left: 0px;
+	}
+	.product-page__main-content {
+		width: 40% !important;
+		box-sizing: border-box;
+	}
+
+	.product-page__description {
+		padding: 0px 16px 32px 0px;
+	}
 }

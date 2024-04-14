@@ -14,7 +14,7 @@ const LabelSelect: FC<Props> = ({ selected, text, callback }) => {
 	return (
 		<div
 			className={`label-select ${
-				selected && !callback ? "label-select--selected" : ""
+				selected && callback ? "label-select--selected" : ""
 			}`}
 			aria-label="region"
 			tabIndex={0}
