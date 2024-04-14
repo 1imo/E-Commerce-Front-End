@@ -104,14 +104,138 @@ h3 {
 .body-text-large {
 	font-size: 17.5px;
 	line-height: 28px;
+	display: inline-block;
+	width: fit-content;
 }
 
 .body-text-small {
 	font-size: 12.5px;
 	line-height: 20px;
+	display: inline-block;
+	width: fit-content;
 }
 
-@media (min-width: 500px) {
+.padding-small {
+	padding: 8px;
+}
+
+.padding-top-small {
+	padding-top: 8px;
+}
+
+.padding-bottom-small {
+	padding-bottom: 8px;
+}
+
+.padding-left-small {
+	padding-left: 8px;
+}
+
+.padding-right-small {
+	padding-right: 8px;
+}
+
+.margin-small {
+	margin: 8px;
+}
+
+.margin-top-small {
+	margin-top: 8px;
+}
+
+.margin-bottom-small {
+	margin-bottom: 8px;
+}
+
+.margin-left-small {
+	margin-left: 8px;
+}
+
+.margin-right-small {
+	margin-right: 8px;
+}
+
+.padding-medium {
+	padding: 16px;
+}
+
+.padding-top-medium {
+	padding-top: 16px;
+}
+
+.padding-bottom-medium {
+	padding-bottom: 16px;
+}
+
+.padding-left-medium {
+	padding-left: 16px;
+}
+
+.padding-right-medium {
+	padding-right: 16px;
+}
+
+.margin-medium {
+	margin: 16px;
+}
+
+.margin-top-medium {
+	margin-top: 16px;
+}
+
+.margin-bottom-medium {
+	margin-bottom: 16px;
+}
+
+.margin-left-medium {
+	margin-left: 16px;
+}
+
+.margin-right-medium {
+	margin-right: 16px;
+}
+
+.padding-large {
+	padding: 32px;
+}
+
+.padding-top-large {
+	padding-top: 32px;
+}
+
+.padding-bottom-large {
+	padding-bottom: 32px;
+}
+
+.padding-left-large {
+	padding-left: 32px;
+}
+
+.padding-right-large {
+	padding-right: 32px;
+}
+
+.margin-large {
+	margin: 32px;
+}
+
+.margin-top-large {
+	margin-top: 32px;
+}
+
+.margin-bottom-large {
+	margin-bottom: 32px;
+}
+
+.margin-left-large {
+	margin-left: 32px;
+}
+
+.margin-right-large {
+	margin-right: 32px;
+}
+
+@media (min-width: 550px) {
 	body {
 		padding: 32px calc(100vw / 6);
 		box-sizing: border-box !important;

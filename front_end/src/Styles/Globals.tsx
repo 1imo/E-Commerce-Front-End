@@ -56,3 +56,58 @@ export const useDesktopScroll = (
 		handleMouseUp,
 	};
 };
+
+type PaddingSize = "small" | "medium" | "large";
+
+export interface Padding {
+	top?: PaddingSize;
+	bottom?: PaddingSize;
+	left?: PaddingSize;
+	right?: PaddingSize;
+}
+
+export const usePadding = (
+	padding: Padding | undefined,
+	isParagraph: boolean = false
+) => {
+	const [paddingClasses, setPaddingClasses] = useState<string[]>([]);
+
+	useEffect(() => {
+		const classes: string[] = [];
+
+		if (padding) {
+			if (padding.top) {
+				classes.push(
+					isParagraph
+						? `margin-top-${padding.top}`
+						: `padding-top-${padding.top}`
+				);
+			}
+			if (padding.bottom) {
+				classes.push(
+					isParagraph
+						? `margin-bottom-${padding.bottom}`
+						: `padding-bottom-${padding.bottom}`
+				);
+			}
+			if (padding.left) {
+				classes.push(
+					isParagraph
+						? `margin-left-${padding.left}`
+						: `padding-left-${padding.left}`
+				);
+			}
+			if (padding.right) {
+				classes.push(
+					isParagraph
+						? `margin-right-${padding.right}`
+						: `padding-right-${padding.right}`
+				);
+			}
+		}
+
+		setPaddingClasses(classes);
+	}, [padding, isParagraph]);
+
+	return paddingClasses.join(" ");
+};

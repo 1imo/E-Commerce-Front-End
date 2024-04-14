@@ -11,6 +11,7 @@
 	scroll-padding-inline: 16px;
 	-webkit-scrollbar-width: none;
 	scrollbar-width: none;
+	padding: 16px 16px 32px;
 }
 
 .label-select-grid:-webkit-scrollbar {
@@ -23,8 +24,15 @@
 	scroll-snap-align: start;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 550px) {
 	.label-select-grid {
 		padding: 16px 0px 32px;
+	}
+}
+
+@media (min-width: 650px) {
+	.label-select-grid {
+		flex-wrap: wrap;
+		row-gap: 8px;
 	}
 }

@@ -16,3 +16,9 @@
 	width: min-content;
 	align-self: flex-end;
 }
+
+@media (min-width: 550px) {
+	.nav-bar {
+		padding: 32px 0px 16px;
+	}
+}

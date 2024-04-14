@@ -17,7 +17,7 @@
 	width: 100%;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 550px) {
 	.product-pg__actions {
 		padding: 16px 0px 32px;
 	}

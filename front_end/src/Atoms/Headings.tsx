@@ -1,4 +1,5 @@
-import { createElement, FC } from "react";
+import React, { createElement, FC } from "react";
+import { usePadding, Padding } from "../Styles/Globals";
 
 // Types
 type HeadingType = "Primary" | "Secondary";
@@ -17,13 +18,21 @@ interface Props {
 	size: HeadingSize;
 	text: string;
 	colour?: HeadingColour;
+	padding?: Padding;
 }
 
 // Returns a heading element
 // A secondary heading is smaller than a primary heading by step of one
 // Defaults to --grey-one
-const Heading: FC<Props> = ({ type, size, text, colour = "--grey-one" }) => {
+const Heading: FC<Props> = ({
+	type,
+	size,
+	text,
+	colour = "--grey-one",
+	padding,
+}) => {
 	let HeadingElement;
+
 	if (type === "Primary") {
 		if (size === "one") {
 			HeadingElement = "h1";
@@ -40,9 +49,14 @@ const Heading: FC<Props> = ({ type, size, text, colour = "--grey-one" }) => {
 		}
 	}
 
+	const paddingClasses = usePadding(padding);
+
 	return createElement(
 		HeadingElement,
-		{ style: { color: `var(${colour})` } },
+		{
+			style: { color: `var(${colour})` },
+			className: paddingClasses,
+		},
 		text
 	);
 };

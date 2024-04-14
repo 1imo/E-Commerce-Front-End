@@ -29,9 +29,23 @@
 	scroll-snap-align: start;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 450px) {
 	.product-img__grid {
-		padding: 0px 32px 16px 16px !important;
+		aspect-ratio: 1/1;
+		/* padding: 0px 0px 16px !important; */
+	}
+}
+
+@media (min-width: 550px) {
+	.product-img__grid {
+		aspect-ratio: 1/1;
+		padding: 0px 0px 16px !important;
+	}
+}
+
+@media (min-width: 650px) {
+	.product-img__grid {
+		padding: 0px 32px 16px 0px !important;
 		flex-direction: column;
 		row-gap: 32px;
 		width: 60%;

@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { usePadding, Padding } from "../Styles/Globals";
 
 // Types
 type TextSize = "one" | "two";
@@ -15,20 +16,27 @@ interface Props {
 	size: TextSize;
 	text: string;
 	colour?: TextColour;
+	padding?: Padding;
 }
 
 // Returns a p tag
 // Default colour of --grey-two
-const Text: FC<Props> = ({ size, text, colour = "--grey-two" }) => {
+const Text: FC<Props> = ({ size, text, colour = "--grey-two", padding }) => {
 	let classname;
+
 	if (size === "one") {
 		classname = "body-text-large";
 	} else {
 		classname = "body-text-small";
 	}
 
+	const paddingClasses = usePadding(padding, true);
+
 	return (
-		<p className={classname} style={{ color: `var(${colour})` }}>
+		<p
+			className={`${classname} ${paddingClasses}`}
+			style={{ color: `var(${colour})` }}
+		>
 			{text}
 		</p>
 	);

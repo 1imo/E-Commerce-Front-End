@@ -45,32 +45,28 @@ const ProductPage: FC = () => {
 			<NavBar left="Back" />
 			<ProductImgGrid images={product.images} alt={product.heading} />
 			<div className="product-page__main-content">
-				<div className="product-page__main-content--text">
-					<Heading
-						type="Primary"
-						size="two"
-						text={product.heading}
-						colour="--grey-one"
-					/>
-					<Heading
-						type="Secondary"
-						size="two"
-						text={product.category}
-						colour="--grey-two"
-					/>
-				</div>
+				<Heading
+					type="Primary"
+					size="one"
+					text={product.heading}
+					colour="--grey-one"
+				/>
+				<Heading
+					type="Secondary"
+					size="two"
+					text={product.category}
+					colour="--grey-two"
+				/>
 				<LabelSelectGrid
 					selected={categoryCallback}
 					options={options}
 					callback={setCategoryCallback}
 				/>
-				<div className="product-page__description">
-					<Text
-						size="two"
-						text={product.description}
-						colour="--grey-one"
-					/>
-				</div>
+				<Text
+					size="two"
+					text={product.description}
+					colour="--grey-one"
+				/>
 				<ProductPgActions
 					price={Number(
 						product.options[
@@ -81,9 +77,7 @@ const ProductPage: FC = () => {
 					)}
 					callback={setBtnCallback}
 				/>
-				{document.body.clientWidth < 500 && (
-					<RecommendedProductGrid products={productJSON} />
-				)}
+				<RecommendedProductGrid products={productJSON} />
 			</div>
 		</main>
 	);
