@@ -1,10 +1,11 @@
-import { FC, useState } from "react";
+import { FC, RefObject, useState, useRef, useEffect } from "react";
 import Icon from "../../Atoms/Icons";
 import "./Style.css";
 import Text from "../../Atoms/Text";
 
 // Types
 type Icon = "Search" | "User" | "Email" | "House" | "Pin" | "Map";
+type InputType = "text" | "email" | "number" | "password";
 
 // Props
 interface Props {
@@ -12,9 +13,20 @@ interface Props {
 	placeholder: string;
 	label?: string;
 	required?: Boolean;
+	name?: string;
+	inputType?: InputType;
 }
 
-const Input: FC<Props> = ({ type, placeholder, label, required }) => {
+const Input: FC<Props> = ({
+	type,
+	placeholder,
+	label,
+	required = false,
+	name = undefined,
+	inputType = "text",
+}) => {
+	const containerRef = useRef<HTMLDivElement>(null);
+	const inputRef = useRef<HTMLInputElement | null>(null);
 	let icon;
 
 	switch (type) {
@@ -38,6 +50,26 @@ const Input: FC<Props> = ({ type, placeholder, label, required }) => {
 			break;
 	}
 
+	useEffect(() => {
+		const handleInputChange = () => {
+			if (inputRef.current?.value && inputRef.current.value.length > 0) {
+				containerRef.current?.classList.add(
+					"input__container--not-empty"
+				);
+			} else {
+				containerRef.current?.classList.remove(
+					"input__container--not-empty"
+				);
+			}
+		};
+
+		inputRef.current?.addEventListener("input", handleInputChange);
+
+		return () => {
+			inputRef.current?.removeEventListener("input", handleInputChange);
+		};
+	}, []);
+
 	return (
 		<section className="input">
 			{label ? (
@@ -60,9 +92,16 @@ const Input: FC<Props> = ({ type, placeholder, label, required }) => {
 					type == "Search" ? "input__container--search" : ""
 				}`}
 				aria-label="region"
+				ref={containerRef}
 			>
 				{icon}
-				<input placeholder={placeholder} />
+				<input
+					placeholder={placeholder}
+					ref={inputRef}
+					required={required ? true : false}
+					name={name}
+					type={inputType}
+				/>
 			</div>
 		</section>
 	);

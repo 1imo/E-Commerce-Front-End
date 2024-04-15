@@ -21,9 +21,10 @@ import BasketCrdGrid from "./Organisms/Basket-Crd-Grid/Index";
 import Home from "./Pages/Home-Page/Index";
 import ProductPage from "./Pages/Product-Page/Index";
 import BasketPage from "./Pages/Basket-Page/Index";
+import CheckoutPage from "./Pages/Checkout-Page/Index";
 
 function App() {
-	return <BasketPage />;
+	return <CheckoutPage />;
 }
 
 export default App;

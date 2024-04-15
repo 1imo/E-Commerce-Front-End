@@ -1,19 +1,22 @@
 import { FC } from "react";
 import Text from "../../Atoms/Text";
 import "./Style.css";
-import Heading from "../../Atoms/Headings";
+
+type BtnType = "submit";
 
 interface Props {
 	text: string;
-	output: (value: boolean) => void;
+	type?: BtnType;
+	cb: (value: boolean) => void;
 }
 
-const BtnMain: FC<Props> = ({ text, output }) => {
+const BtnMain: FC<Props> = ({ text, cb, type = undefined }) => {
 	return (
 		<button
 			className="btn-main"
 			aria-label="region"
-			onClick={() => output(true)}
+			onClick={() => cb(true)}
+			type={type}
 		>
 			<Text size="two" text={text} colour="--grey-one" />
 		</button>
