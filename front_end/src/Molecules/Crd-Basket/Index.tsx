@@ -12,7 +12,7 @@ interface ProductInterface {
 }
 
 const BasketCrd: FC<ProductInterface> = ({ product }) => {
-	const { id, heading, price, quantity, option } = product;
+	const { id, heading, category, price, quantity, option } = product;
 	const [quan, setQuantity] = useState<number>(quantity);
 
 	const handleQuantityChange = (newQuantity: number) => {
@@ -20,6 +20,7 @@ const BasketCrd: FC<ProductInterface> = ({ product }) => {
 			Basket.addItem({
 				id: id,
 				heading: heading,
+				category: category,
 				option: option,
 				quantity: newQuantity - quan,
 				price: price,
@@ -28,6 +29,7 @@ const BasketCrd: FC<ProductInterface> = ({ product }) => {
 			Basket.removeItem({
 				id: id,
 				heading: heading,
+				category: category,
 				option: option,
 				quantity: quan - newQuantity,
 				price: price,
@@ -53,14 +55,17 @@ const BasketCrd: FC<ProductInterface> = ({ product }) => {
 						text={heading}
 						colour="--grey-one"
 					/>
-					<Text size="two" text={option} colour="--grey-two" />
+					<Text size="two" text={category} colour="--grey-two" />
+					<Text size="one" text={`£${price}`} colour="--grey-two" />
 				</div>
-				{option && <LabelSelect selected={true} text={option} />}
-				<QuantitySelect
-					quantity={quan}
-					setQuanitity={handleQuantityChange}
-					wrapper={true}
-				/>
+				<div className="basket-crd-grid__info-options">
+					{option && <LabelSelect selected={true} text={option} />}
+					<QuantitySelect
+						quantity={quan}
+						setQuanitity={handleQuantityChange}
+						wrapper={true}
+					/>
+				</div>
 			</div>
 		</div>
 	);

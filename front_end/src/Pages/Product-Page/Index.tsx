@@ -27,6 +27,7 @@ const ProductPage: FC = () => {
 			Basket.addItem({
 				id: product.id,
 				heading: product.heading,
+				category: product.category,
 				option: categoryCallback,
 				quantity: btnCallback,
 				price: Number(

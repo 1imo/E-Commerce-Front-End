@@ -1,5 +1,5 @@
 .basket-pg__actions {
-	position: fixed;
+	position: sticky;
 	bottom: 0;
 	display: flex;
 	flex-direction: column;
@@ -22,10 +22,5 @@
 	.basket-pg__actions {
 		padding: 16px 0px 32px !important;
 		width: 66.66vw !important;
-	}
-}
-
-@media (min-width: 650px) {
-	.basket-pg__actions {
 	}
 }

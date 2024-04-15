@@ -6,6 +6,7 @@ export interface Product {
 	option: string;
 	price: number;
 	quantity: number;
+	category: string;
 }
 
 export class Basket {

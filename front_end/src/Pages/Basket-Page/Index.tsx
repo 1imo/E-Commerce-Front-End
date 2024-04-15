@@ -24,8 +24,10 @@ const BasketPage: FC = () => {
 	return (
 		<main className="basket-page">
 			<NavBar left="Back" />
-			<BasketCrdGrid products={Basket.getItems()} />
-			<BasketPgActions price={price} callback={setCallback} />
+			<div className="basket-page__content">
+				<BasketCrdGrid products={Basket.getItems()} />
+				<BasketPgActions price={price} callback={setCallback} />
+			</div>
 		</main>
 	);
 };
