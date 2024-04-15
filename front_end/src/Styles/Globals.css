@@ -32,6 +32,10 @@ body {
 	backface-visibility: hidden;
 }
 
+/* main {
+	min-height: 100svh;
+} */
+
 input {
 	font-family: var(--font-family);
 	font-weight: var(--medium);
@@ -237,7 +241,7 @@ h3 {
 
 @media (min-width: 550px) {
 	body {
-		padding: 32px calc(100vw / 6);
+		padding: 0px calc(100vw / 6);
 		box-sizing: border-box !important;
 	}
 }

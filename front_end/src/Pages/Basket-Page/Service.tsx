@@ -1,3 +1,5 @@
+import { EventEmitter } from "../../Services/Index";
+
 export interface Product {
 	id: number;
 	heading: string;
@@ -8,6 +10,7 @@ export interface Product {
 
 export class Basket {
 	private static basket: Array<Product>;
+	private static emitter = new EventEmitter();
 
 	static {
 		Basket.basket = JSON.parse(localStorage.getItem("basket") || "[]");
@@ -26,6 +29,7 @@ export class Basket {
 		}
 
 		localStorage.setItem("basket", JSON.stringify(Basket.basket));
+		this.emitter.emit("change");
 	}
 
 	static removeItem(item: Product) {
@@ -41,6 +45,7 @@ export class Basket {
 				Basket.basket.splice(index, 1);
 			}
 			localStorage.setItem("basket", JSON.stringify(Basket.basket));
+			this.emitter.emit("change");
 		}
 	}
 
@@ -53,5 +58,13 @@ export class Basket {
 
 	static getItems() {
 		return Basket.basket;
+	}
+
+	static on(handler: (event: string) => void) {
+		this.emitter.on("change", handler);
+	}
+
+	static off(handler: (event: string) => void) {
+		this.emitter.off("change", handler);
 	}
 }

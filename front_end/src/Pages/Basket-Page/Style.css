@@ -1,0 +1,11 @@
+.basket-page {
+	min-height: 100svh;
+	box-sizing: border-box !important;
+	position: relative;
+}
+
+.basket-page__content {
+	display: flex;
+	flex-direction: column;
+	width: 100% !important;
+}
