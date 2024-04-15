@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Icon from "../../Atoms/Icons";
 import "./Style.css";
+import { useNavigate } from "react-router";
 
 // Types
 type Icon = "Basket" | "Back";
@@ -19,6 +20,16 @@ interface Props {
 }
 
 const BtnIcon: FC<Props> = ({ type, colour = "--grey-one" }) => {
+	const navigate = useNavigate();
+
+	const handleClick = () => {
+		if (type == "Back") {
+			navigate(-1);
+		} else if (type == "Basket") {
+			navigate("/basket");
+		}
+	};
+
 	let icon;
 
 	if (type == "Basket") {
@@ -27,7 +38,11 @@ const BtnIcon: FC<Props> = ({ type, colour = "--grey-one" }) => {
 		icon = <Icon type="Back" colour={colour} />;
 	}
 
-	return <button className="btn-icon">{icon}</button>;
+	return (
+		<button className="btn-icon" onClick={handleClick}>
+			{icon}
+		</button>
+	);
 };
 
 export default BtnIcon;

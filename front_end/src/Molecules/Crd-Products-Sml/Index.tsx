@@ -2,6 +2,7 @@ import { FC } from "react";
 import Heading from "../../Atoms/Headings";
 import "./Style.css";
 import LinkNotif from "../Link-Notif/Index";
+import { useNavigate } from "react-router";
 
 type Width = "fixed" | "fluid";
 
@@ -20,12 +21,14 @@ const CrdProductsSml: FC<Props> = ({
 	title,
 	category,
 }) => {
+	const navigate = useNavigate();
 	return (
 		<div
 			className={`crd-products crd-products--${width}`}
 			tabIndex={0}
 			role="region"
 			aria-label={`Product: ${title}`}
+			onClick={() => navigate(`/item/${title}`)}
 		>
 			<div className="crd-products__image">
 				<img src={imageSource} alt={title} />

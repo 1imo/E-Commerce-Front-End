@@ -5,10 +5,11 @@
 	width: 100%;
 	box-sizing: border-box;
 	padding: 32px 16px 16px;
+	column-gap: 16px;
 }
 
 .nav-bar__left {
-	width: calc(100% - 96px) !important;
+	flex: 1;
 	align-self: flex-start;
 }
 

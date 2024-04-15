@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import Heading from "./Atoms/Headings";
 import Icon from "./Atoms/Icons";
 import Text from "./Atoms/Text";
@@ -24,7 +25,14 @@ import BasketPage from "./Pages/Basket-Page/Index";
 import CheckoutPage from "./Pages/Checkout-Page/Index";
 
 function App() {
-	return <CheckoutPage />;
+	return (
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/item/:id" element={<ProductPage />} />
+			<Route path="/basket" element={<BasketPage />} />
+			<Route path="/checkout" element={<CheckoutPage />} />
+		</Routes>
+	);
 }
 
 export default App;
