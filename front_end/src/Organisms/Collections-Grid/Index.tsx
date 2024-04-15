@@ -1,8 +1,9 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import CrdCollections, {
 	Props as Collection,
 } from "../../Molecules/Crd-Collections/Index";
 import "./Style.css";
+import { useDesktopScroll } from "../../Styles/Globals";
 interface Props {
 	collections: Array<Collection>;
 }

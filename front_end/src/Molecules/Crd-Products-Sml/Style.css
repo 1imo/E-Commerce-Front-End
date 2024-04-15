@@ -57,6 +57,11 @@
 	transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.crd-products:hover .crd-products__link-icon {
+	opacity: 1 !important;
+	transform: translate(0, 0) !important;
+}
+
 .crd-products:hover .crd-products__link-icon,
 .crd-products:focus .crd-products__link-icon,
 .crd-products:active .crd-products__link-icon {
@@ -83,3 +88,32 @@
 	filter: brightness(1);
 	transform: scale(1.125);
 }
+
+/* h1 {
+	font-size: 22.5px;
+	line-height: 36px;
+}
+
+h2 {
+	font-size: 17.5px;
+	line-height: 28px;
+}
+
+h3 {
+	font-size: 12.5px;
+	line-height: 20px;
+}
+
+.body-text-large {
+	font-size: 17.5px;
+	line-height: 28px;
+	display: inline-block;
+	width: fit-content;
+}
+
+.body-text-small {
+	font-size: 12.5px;
+	line-height: 20px;
+	display: inline-block;
+	width: fit-content;
+} */

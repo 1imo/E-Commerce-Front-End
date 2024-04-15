@@ -9,32 +9,15 @@ export const useDesktopScroll = (
 	const [scrollPos, setScrollPos] = useState(0);
 
 	useEffect(() => {
-		snapToNearestItem();
-	}, []);
-
-	const getItemSize = () => {
-		const firstChild = ref.current?.querySelector(".product-img__lrg");
-		const firstChildAsHTMLElement = firstChild as HTMLElement;
-		return axis === "x"
-			? firstChildAsHTMLElement?.offsetWidth || 0
-			: firstChildAsHTMLElement?.offsetHeight || 0;
-	};
-
-	const snapToNearestItem = () => {
-		const itemSize = getItemSize();
-		if (itemSize) {
-			const nearestItemIndex = Math.round(scrollPos / itemSize);
-			const nearestScrollPosition = nearestItemIndex * itemSize;
-			ref.current?.scrollTo({
-				[axis === "x" ? "left" : "top"]: nearestScrollPosition,
-				behavior: "smooth",
-			});
+		const element = ref.current;
+		if (element) {
+			setScrollPos(axis === "x" ? element.scrollLeft : element.scrollTop);
 		}
-	};
+	}, [ref, axis]);
 
 	const handleMouseDown = (e: React.MouseEvent<HTMLElement>) => {
 		setIsDown(true);
-		setStartPos(axis === "x" ? e.pageX : e.pageY); // Fixed typo
+		setStartPos(axis === "x" ? e.pageX : e.pageY);
 		e.preventDefault();
 	};
 
@@ -42,12 +25,18 @@ export const useDesktopScroll = (
 		if (!isDown) return;
 		const movePos = axis === "x" ? e.pageX - startPos : e.pageY - startPos;
 		const newScrollPos = scrollPos - movePos;
+		if (ref.current) {
+			if (axis === "x") {
+				ref.current.scrollLeft = newScrollPos;
+			} else {
+				ref.current.scrollTop = newScrollPos;
+			}
+		}
 		setScrollPos(newScrollPos);
 	};
 
 	const handleMouseUp = () => {
 		setIsDown(false);
-		snapToNearestItem();
 	};
 
 	return {

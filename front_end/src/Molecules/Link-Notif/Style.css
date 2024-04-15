@@ -12,7 +12,7 @@
 	-webkit-mask: url(#link-mask);
 	/* mix-blend-mode: screen; */
 	border-radius: 50%;
-	padding: 8px !important;
+	/* padding: 8px !important; */
 	mask-composite: exclude;
 	-webkit-mask-composite: destination-out;
 	height: 32px !important;

@@ -20,6 +20,7 @@
 	object-fit: cover;
 	object-position: bottom;
 	filter: brightness(0.75);
+	scale: 1.01;
 	transition: transform 0.3s ease, filter 0.3s ease;
 	transform-origin: center center;
 }

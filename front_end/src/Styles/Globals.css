@@ -30,6 +30,9 @@ body {
 	box-sizing: border-box;
 	transform-style: preserve-3d;
 	backface-visibility: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* main {
@@ -117,6 +120,14 @@ h3 {
 	line-height: 20px;
 	display: inline-block;
 	width: fit-content;
+}
+
+img {
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .padding-small {
@@ -240,8 +251,8 @@ h3 {
 }
 
 @media (min-width: 550px) {
-	body {
-		padding: 0px calc(100vw / 6);
+	main {
+		padding: 0px calc(100vw / 6) !important;
 		box-sizing: border-box !important;
 	}
 }
